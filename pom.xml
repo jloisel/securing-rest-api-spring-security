@@ -3,16 +3,42 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.9.RELEASE</version>
+    <version>2.0.2.RELEASE</version>
   </parent>
 
   <groupId>com.octoperf</groupId>
   <artifactId>securing-rest-api-spring-security</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <modules>
+    <module>example-simple</module>
+    <module>example-jwt</module>
+    <module>user-entity</module>
+    <module>user-auth-api</module>
+    <module>user-crud-api</module>
+    <module>user-crud-in-memory</module>
+    <module>user-controller</module>
+    <module>user-auth-uuid</module>
+    <module>security-config</module>
+    <module>user-auth-token</module>
+    <module>token-api</module>
+    <module>token-jwt</module>
+    <module>date-service</module>
+    <module>bootstrap</module>
+  </modules>
+
+  <properties>
+    <commons-lang.version>3.6</commons-lang.version>
+    <guava.version>25.0-jre</guava.version>
+    <jwt.version>0.9.0</jwt.version>
+    <joda-time.version>2.9.9</joda-time.version>
+    <junit.version>4.12</junit.version>
+    <mockito.version>2.17.0</mockito.version>
+  </properties>
 
   <dependencies>
     <dependency>
@@ -34,14 +60,42 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
-      <version>3.6</version>
+      <version>${commons-lang.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>23.2-jre</version>
+      <version>${guava.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>${jwt.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>${joda-time.version}</version>
     </dependency>
 
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava-testlib</artifactId>
+      <version>${guava.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
