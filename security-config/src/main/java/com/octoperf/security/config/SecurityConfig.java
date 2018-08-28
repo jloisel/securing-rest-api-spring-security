@@ -65,7 +65,7 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
       .authenticationProvider(provider)
       .addFilterBefore(restAuthenticationFilter(), AnonymousAuthenticationFilter.class)
       .authorizeRequests()
-      .anyRequest()
+      .requestMatchers(PROTECTED_URLS)
       .authenticated()
       .and()
       .csrf().disable()
