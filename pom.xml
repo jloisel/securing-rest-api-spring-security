@@ -33,7 +33,7 @@
 
   <properties>
     <commons-lang.version>3.12.0</commons-lang.version>
-    <guava.version>31.0.1-jre</guava.version>
+    <guava.version>32.0.0-jre</guava.version>
     <jaxb.version>2.3.3</jaxb.version>
     <jwt.version>0.9.1</jwt.version>
     <joda-time.version>2.10.13</joda-time.version>
